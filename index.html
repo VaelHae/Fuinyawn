@@ -436,6 +436,96 @@
   .star-trail { display:flex; justify-content:center; gap:6px; margin-bottom:6px; }
   .star-trail span { animation:starTrail ease-in-out infinite; }
   @keyframes starTrail{0%,100%{opacity:0.2;transform:scale(0.8)}50%{opacity:1;transform:scale(1.2)}}
+
+  /* Chibi floating on cloud */
+  .splash-chibi-wrap {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 8px;
+    animation: chibiCloudFloat 3s ease-in-out infinite;
+  }
+
+  @keyframes chibiCloudFloat {
+    0%,100% { transform: translateY(0) rotate(-1deg); }
+    50%      { transform: translateY(-18px) rotate(1deg); }
+  }
+
+  .splash-chibi-img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 20px rgba(90,171,219,0.4));
+    position: relative;
+    z-index: 2;
+  }
+
+  .splash-chibi-cloud {
+    font-size: 4.5rem;
+    margin-top: -30px;
+    line-height: 1;
+    filter: drop-shadow(0 4px 12px rgba(90,171,219,0.3));
+    position: relative;
+    z-index: 1;
+    animation: cloudWiggle 3s ease-in-out infinite;
+  }
+
+  @keyframes cloudWiggle {
+    0%,100% { transform: scaleX(1); }
+    50%      { transform: scaleX(1.08); }
+  }
+
+
+  /* Chibi + cloud floating group */
+  .splash-chibi-wrap {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4px;
+    animation: chibiCloudFloat 3.5s ease-in-out infinite;
+  }
+  @keyframes chibiCloudFloat {
+    0%,100% { transform: translateY(0) rotate(-0.5deg); }
+    50%      { transform: translateY(-20px) rotate(0.5deg); }
+  }
+  .splash-chibi-img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 6px 18px rgba(90,171,219,0.35));
+    position: relative;
+    z-index: 2;
+    margin-bottom: -18px;
+  }
+  .splash-chibi-cloud {
+    font-size: 5rem;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 6px 16px rgba(90,171,219,0.25));
+    animation: cloudPuff 3.5s ease-in-out infinite;
+  }
+  @keyframes cloudPuff {
+    0%,100% { transform: scaleX(1); }
+    50%      { transform: scaleX(1.1); }
+  }
+
+
+  .splash-char-img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    margin-bottom: 16px;
+    position: relative; z-index: 1;
+    filter: drop-shadow(0 8px 24px rgba(90,171,219,0.5));
+    animation: charBounce 1.2s cubic-bezier(0.36,0.07,0.19,0.97) infinite;
+  }
+
 </style>
 </head>
 <body>
@@ -454,7 +544,7 @@
   <div class="splash-cloud" style="top:20%;right:5%;font-size:2rem;animation-duration:6s;animation-delay:-2s;">⛅</div>
   <div class="splash-cloud" style="bottom:20%;left:5%;font-size:1.8rem;animation-duration:5s;animation-delay:-1s;">☁️</div>
   <div id="fallStars"></div>
-  <div class="splash-char">☁️</div>
+  <img class="splash-char-img" src="https://i.ibb.co.com/LXXky5y4/Picsart-25-06-09-00-53-31-257-1.png" alt="Fui">
   <div class="splash-name">Fui</div>
   <div class="splash-sub">✦ cute sky zone ✦</div>
   <button class="splash-btn" onclick="enterSite()">Masuk ✨</button>
@@ -506,40 +596,39 @@
       </div>
 
       <div class="links">
-        
-        <a href="https://sociabuzz.com/fuifui/tribe?_ref=linkbio" class="btn btn-donate">
-            <span class="btn-icon btn-icon-donate"><img src="https://cdn.simpleicons.org/kofi/ff9ec8" alt="SociaBuzz" style="width:15px;height:15px;object-fit:contain;"></span>
-            <span class="btn-label"><span class="btn-name">SociaBuzz</span><span class="btn-sub">Tribe Fui 💙</span></span>
-            <span class="btn-arrow">→</span>
-          </a>
-          <a href="https://saweria.co/fuidesunyaa" class="btn btn-donate">
-            <span class="btn-icon btn-icon-donate">🌟</span>
-            <span class="btn-label"><span class="btn-name">Saweria</span><span class="btn-sub">Support Fui ⭐</span></span>
-            <span class="btn-arrow">→</span>
-          </a>
-          <a href="https://trakteer.id/Fui-t3co4/link" class="btn btn-donate">
-            <span class="btn-icon btn-icon-donate">☕</span>
-            <span class="btn-label"><span class="btn-name">Trakteer</span><span class="btn-sub">Trakteer Fui 🩵</span></span>
-            <span class="btn-arrow">→</span>
-          </a>
-
-        <div class="section-label">Social Media Fui 📷</div>
-        <a href="https://discord.gg/2aB2fGFPgB" class="btn">
-            <span class="btn-icon btn-icon-dc"><img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord" style="width:15px;height:15px;object-fit:contain;"></span>
-            <span class="btn-label"><span class="btn-name">Discord</span><span class="btn-sub">Join Server ☁️</span></span>
-            <span class="btn-arrow">→</span>
-          </a>
         <a href="https://www.tiktok.com/@kuuhaku249" class="btn">
-            <span class="btn-icon"><img src="https://cdn.simpleicons.org/tiktok/5aabdb" alt="TikTok" style="width:15px;height:15px;object-fit:contain;"></span>
-            <span class="btn-label"><span class="btn-name">TikTok</span><span class="btn-sub">@kuuhaku249</span></span>
-            <span class="btn-arrow">→</span>
-          </a>
-          <a href="https://www.instagram.com/fuifui554/" class="btn btn-ig">
-            <span class="btn-icon btn-icon-ig"><img src="https://cdn.simpleicons.org/instagram/ff9ec8" alt="Instagram" style="width:15px;height:15px;object-fit:contain;"></span>
-            <span class="btn-label"><span class="btn-name">Instagram</span><span class="btn-sub">@fuifui554</span></span>
-            <span class="btn-arrow">→</span>
-          </a>
-        
+          <span class="btn-icon"><img src="https://cdn.simpleicons.org/tiktok/5aabdb" alt="TikTok" style="width:15px;height:15px;object-fit:contain;"></span>
+          <span class="btn-label"><span class="btn-name">TikTok</span><span class="btn-sub">@kuuhaku249</span></span>
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="https://www.instagram.com/fuifui554/" class="btn btn-ig">
+          <span class="btn-icon btn-icon-ig"><img src="https://cdn.simpleicons.org/instagram/ff9ec8" alt="Instagram" style="width:15px;height:15px;object-fit:contain;"></span>
+          <span class="btn-label"><span class="btn-name">Instagram</span><span class="btn-sub">@fuifui554</span></span>
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="https://discord.gg/2aB2fGFPgB" class="btn">
+          <span class="btn-icon btn-icon-dc"><img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord" style="width:15px;height:15px;object-fit:contain;"></span>
+          <span class="btn-label"><span class="btn-name">Discord</span><span class="btn-sub">Join Server ☁️</span></span>
+          <span class="btn-arrow">→</span>
+        </a>
+
+        <div class="section-label">Support Fui ☕</div>
+
+        <a href="https://sociabuzz.com/fuifui/tribe?_ref=linkbio" class="btn btn-donate">
+          <span class="btn-icon btn-icon-donate"><img src="https://cdn.simpleicons.org/kofi/ff9ec8" alt="SociaBuzz" style="width:15px;height:15px;object-fit:contain;"></span>
+          <span class="btn-label"><span class="btn-name">SociaBuzz</span><span class="btn-sub">Tribe Fui 💙</span></span>
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="https://saweria.co/fuidesunyaa" class="btn btn-donate">
+          <span class="btn-icon btn-icon-donate">🌟</span>
+          <span class="btn-label"><span class="btn-name">Saweria</span><span class="btn-sub">Support Fui ⭐</span></span>
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="https://trakteer.id/Fui-t3co4/link" class="btn btn-donate">
+          <span class="btn-icon btn-icon-donate">☕</span>
+          <span class="btn-label"><span class="btn-name">Trakteer</span><span class="btn-sub">Trakteer Fui 🩵</span></span>
+          <span class="btn-arrow">→</span>
+        </a>
       </div>
 
       <!-- Music Player -->
@@ -576,7 +665,7 @@
           <span style="animation-duration:1.8s;animation-delay:0.9s;">✨</span>
           <span style="animation-duration:1.8s;animation-delay:1.2s;">⭐</span>
         </div>
-        Copyright By VaelHae © 2026
+        Fui © 2026
       </div>
     </div>
   </div>
